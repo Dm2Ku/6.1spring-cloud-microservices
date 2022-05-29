@@ -1,3 +1,4 @@
+---
 hystrix:
   command:
     default:
@@ -5,32 +6,26 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 20000
-
 ribbon:
-  ReadTimeout: 20000
   ConnectTimeout: 20000
-
+  ReadTimeout: 20000
+server:
+  port: 8989
 zuul:
-  ignoredServices: '*'
   host:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
-
+  ignoredServices: "*"
   routes:
     account-service:
       path: /accounts/**
       serviceId: account-service
       stripPrefix: false
-
     bill-service:
       path: /bills/**
       serviceId: bill-service
       stripPrefix: false
-
     deposit-service:
       path: /deposits/**
       serviceId: deposit-service
       stripPrefix: false
-
-server:
-  port: 8989
