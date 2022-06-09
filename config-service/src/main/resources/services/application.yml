@@ -2,7 +2,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: "http://registry:8761/eureka/"
+      defaultZone: "http://192.168.178.22:8761/eureka/"
   instance:
     preferIpAddress: true
 hystrix:
